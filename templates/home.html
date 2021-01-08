@@ -1,0 +1,21 @@
+            {% extends 'index.html' %}
+
+            {% block content %}
+            <div class="row mb-2">
+                {% for note in data %}
+                    <div class="col-md-4">
+                      <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                          <strong class="d-inline-block mb-2 text-primary">{{note[4]}}</strong>
+                          <h3 class="mb-0">
+                            <a class="text-dark" href="#">{{note[1]}}</a>
+                          </h3>
+                          <div class="mb-1 text-muted">{{note[5]}}</div>
+                          <p class="card-text mb-auto">{{note[2]}}</p>
+                          <a href="#">Continue reading</a>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+              </div>
+              {% endblock content %}

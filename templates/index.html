@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--translate html5 in Edge -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--translate html5 in phone -->
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<title>{{ Title }}</title>
+        
+        <!-- bootstrap 4 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<body>
+        <header style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../static/Images/TekNotes_Background.jpg); background-size: cover">
+            
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8f9fa; font-weight: bold; color: #1f2327;">
+          <a class="navbar-brand" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 0 16">
+                  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                </svg>
+                TekNotes
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 0 16">
+                  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                </svg>
+            </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Keywords
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">App Development</a>
+                  <a class="dropdown-item" href="#">Machine Learning</a>
+                  <a class="dropdown-item" href="#">Cloud</a>
+                  <a class="dropdown-item" href="#">Programming language</a>
+                </div>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="border: 0px; border-bottom: 2px #1f2327 solid; background-color: #f8f9fa;">
+            </form>
+          </div>
+        </nav>
+        
+        
+            <div style="padding-top: 12%;padding-bottom: 12%;display: {{ disableHeader }} ;margin-bottom: 10px;" >
+                <h1 style="color: white; font-weight: bold;font-size: 100px;text-align: center;margin-bottom: 2%;">TekNotes Blog</h1>
+                
+                <h5 style="color: white;text-align: center; font-style: italic!important;">Daily technology notes for software developers. 💻</h5>
+            </div>
+        </header>
+        
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        
+        <footer style="margin-top: 40px;padding-top: 40px; color: white;width: 100%;clear: both;">
+            <!-- Copyright -->
+              <div class="footer-copyright text-center py-3" style="background-color: #1f2327; ">Copyright © TekNotes Blog. All rights reserved.
+              </div>
+            <!-- Copyright -->
+        </footer>
+	
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+	</body>
+</html>
